@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Reviews</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Page layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #ffffff;
+        }
+        
+        /* Album grid */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+        
+        /* Album items */
+        .album-item {
+            background: #1e1e1e;
+            padding: 10px; /* Padding around the album cover */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 12px; /* Larger border radius for album item */
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 220px; /* Slightly larger to fit padding */
+            height: 340px; /* Adjusted height to fit title */
+        }
+        
+        .album-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .album-cover {
+            width: 100%; /* Full width within the padded area */
+            height: 180px; /* Reduced height to fit within padding */
+            object-fit: cover;
+            border-radius: 8px; /* Smaller radius for image inside card */
+        }
+        
+        .album-title {
+            margin-top: 10px;
+            padding: 10px 0;
+            font-size: 1.1em;
+            color: #e0e0e0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limits to 2 lines */
+            -webkit-box-orient: vertical;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            /* Tablet view */
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Mobile view */
+            .album-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Album Reviews</h1>
+        <div class="album-grid">
+
+        </div>
+    </div>
+
+    <script type="module" src="scripts/indexPage.js"></script>
+</body>
+</html>
