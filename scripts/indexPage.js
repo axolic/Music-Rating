@@ -13,7 +13,7 @@ async function fetchAlbums() {
     data.forEach(album => {
         // Create a clickable album link
         const albumLink = document.createElement('a');
-        albumLink.href = `/album.html?id=${album.album_id}`;
+        albumLink.href = `/Music-Rating/album.html?id=${album.album_id}`;
         albumLink.classList.add('album-item');
 
         const albumCover = document.createElement('img');
